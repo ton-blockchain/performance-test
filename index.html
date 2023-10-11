@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TON Lunar Expedition</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            user-select: none;
+
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            background-image: url("rocket.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            opacity: 0.26;
+        }
+
+        body {
+            margin: 0;
+            text-align: center;
+            background-color: black;
+            color: white;
+            font-size: 32px;
+
+            animation: fadeInAnimation ease-in 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        .logo {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 100px;
+            height: 32px;
+            background-image: url("logo.svg");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .root {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text {
+            text-align: center;
+            font-size: 18px;
+            font-weight: normal;
+            width: 50%;
+            margin-bottom: 32px;
+            line-height: 160%;
+        }
+
+        @media (max-width: 960px) {
+            .text {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .text {
+                width: 100%;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            h1 {
+                font-size: 32px !important;
+            }
+
+            .text {
+                font-size: 16px;
+            }
+
+            #timer {
+                font-size: 30px;
+            }
+
+            #link {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-height: 700px) {
+            .root {
+                justify-content: start;
+                padding-top: 100px;
+            }
+
+            #link {
+                padding-bottom: 100px;
+            }
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 32px;
+            line-height: 120%;
+        }
+
+        #timer {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        a, a:active, a:focus, a:hover {
+            margin-top: 40px;
+            color: #0088cc;
+            text-decoration: none;
+            font-weight: normal;
+
+            background: linear-gradient(90deg, #0198ea 51.35%, #14bcfa 80.71%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="logo"></div>
+
+<div class="root">
+
+    <div class="text">
+        <h1>Witness TON's Historical Public Performance Test</h1>
+
+        <p>
+            Join us on <b>October 31st, 15:00 UTC</b>, as we showcase the technical prowess of The Open Network blockchain. TON is the world's fastest and most scalable blockchain. We are counting down to the moment of truth. Bookmark this page and experience TON's performance for yourself in real-time.
+        </p>
+    </div>
+
+    <div id="timer">
+
+    </div>
+    <a id="link" href="https://t.me/toncoin">
+        Read more
+    </a>
+</div>
+
+<script>
+    const double = (n) => {
+        if (n < 10) return '0' + n;
+        return n;
+    }
+
+    const updateTimer = () => {
+        const endTime = 1698764400;
+
+        const time = Math.round(Date.now() / 1000);
+
+        const duration = endTime - time;
+
+        const seconds = duration % 60
+        const minutes = Math.floor((duration / 60) % 60)
+        const hours = Math.floor((duration / 60 / 60) % 24)
+        const days = Math.floor(duration / 60 / 60 / 24)
+
+        document.getElementById('timer').innerText = 'T-' + double(days) + ':' + double(hours) + ':' + double(minutes) + ':' + double(seconds);
+    }
+
+    setInterval(updateTimer, 1000)
+
+    updateTimer();
+</script>
+
+</body>
+</html>
