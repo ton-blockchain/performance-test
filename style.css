@@ -1,26 +1,19 @@
-* {
-  box-sizing: border-box;
-  user-select: none;
-
-  font-family: "Inter", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+.intro-container h1,
+.intro-container h2,
+.intro-container h3,
+.intro-container h4,
+.intro-container h5,
+.intro-container h6,
+.intro-container p {
   margin: 0;
 }
 
-a {
+.intro-container a {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-.bg {
+.intro-container .bg {
   position: fixed;
   left: 0;
   top: 0;
@@ -37,7 +30,7 @@ a {
   opacity: 0.26;
 }
 
-body {
+.intro-container  {
   width: 100%;
   min-height: 100vh;
   min-height: -webkit-fill-available;
@@ -52,7 +45,7 @@ body {
   animation-fill-mode: forwards;
 }
 
-.container {
+.intro-container .container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,7 +58,7 @@ body {
   margin: auto;
 }
 
-header {
+.intro-container header {
   display: flex;
   justify-content: space-between;
   max-width: 1472px;
@@ -75,7 +68,7 @@ header {
   margin-bottom: -68px;
 }
 
-.logo {
+.intro-container .logo {
   width: 84px;
   height: 32px;
 
@@ -85,13 +78,13 @@ header {
   background-repeat: no-repeat;
 }
 
-.content {
+.intro-container .content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.title {
+.intro-container .title {
   max-width: 920px;
   font-size: 78px;
   font-weight: 700;
@@ -102,7 +95,7 @@ header {
   text-align: center;
 }
 
-.title img {
+.intro-container .title img {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -111,7 +104,7 @@ header {
   top: -8px;
 }
 
-.subtitle {
+.intro-container .subtitle {
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
@@ -123,7 +116,7 @@ header {
   margin-bottom: 16px;
 }
 
-#timer {
+.intro-container #timer {
   font-size: 44px;
   font-weight: 500;
   line-height: 44px;
@@ -131,26 +124,26 @@ header {
   font-variant-numeric: lining-nums tabular-nums;
 }
 
-.timer-item {
+.intro-container .timer-item {
   margin: 0 10px;
   position: relative;
 }
 
-.timer-item:last-child {
+.intro-container .timer-item:last-child {
   margin-right: 0;
 }
 
-.timer-item:first-child {
+.intro-container .timer-item:first-child {
   margin-left: 4px;
 }
 
-.timer-item:first-child::after,
-.timer-item:first-child::before {
+.intro-container .timer-item:first-child::after,
+.intro-container .timer-item:first-child::before {
   content: none;
 }
 
-.timer-item::before,
-.timer-item::after {
+.intro-container .timer-item::before,
+.intro-container .timer-item::after {
   content: "";
   position: absolute;
   left: -12px;
@@ -161,15 +154,15 @@ header {
   border-radius: 50%;
 }
 
-.timer-item::before {
+.intro-container .timer-item::before {
   transform: translateY(-150%);
 }
 
-.timer-item::after {
+.intro-container .timer-item::after {
   transform: translateY(50%);
 }
 
-.button {
+.intro-container .button {
   border-radius: 100px;
   background: #0098ea;
   margin-bottom: 88px;
@@ -184,7 +177,7 @@ header {
   transition: background 0.2s ease-in-out;
 }
 
-.button:hover {
+.intro-container .button:hover {
   background: #00a6ff;
 }
 
@@ -198,12 +191,12 @@ header {
 }
 
 @media (max-width: 734px) {
-  header {
+  .intro-container header {
     padding: 8px 16px;
     margin-bottom: -48px;
   }
 
-  .title {
+  .intro-container .title {
     font-size: 36px;
     line-height: 40px;
     letter-spacing: -1.08px;
@@ -211,13 +204,13 @@ header {
     margin-bottom: 8px;
   }
 
-  .title img {
+  .intro-container .title img {
     width: 38px;
     height: 42px;
     top: -5px;
   }
 
-  .subtitle {
+  .intro-container .subtitle {
     font-variant-numeric: lining-nums tabular-nums;
     font-size: 15px;
     line-height: 24px;
@@ -226,7 +219,7 @@ header {
     margin-bottom: 8px;
   }
 
-  .button {
+  .intro-container .button {
     padding: 6px 16px;
 
     font-size: 14px;
@@ -236,7 +229,7 @@ header {
     margin-bottom: 40px;
   }
 
-  #timer {
+  .intro-container #timer {
     font-size: 28px;
     line-height: 28px;
     letter-spacing: -0.048px;
@@ -244,14 +237,14 @@ header {
 }
 
 @media (min-width: 1920px) {
-  .title {
+  .intro-container .title {
     font-size: 92px;
     line-height: 100px;
     letter-spacing: -3.68px;
     max-width: 1080px;
   }
 
-  .subtitle {
+  .intro-container .subtitle {
     font-size: 22px;
     line-height: 32px;
     letter-spacing: -0.037px;
@@ -260,14 +253,14 @@ header {
 }
 
 @media (min-width: 2560px) {
-  .title {
+  .intro-container .title {
     font-size: 116px;
     line-height: 132px;
     letter-spacing: -4.64px;
     max-width: 1390px;
   }
 
-  .subtitle {
+  .intro-container .subtitle {
     font-size: 28px;
     line-height: 40px;
     letter-spacing: -0.048px;
