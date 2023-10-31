@@ -124,6 +124,7 @@
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="data.js"></script>
 
     <style>
         /* BASE */
@@ -966,7 +967,7 @@
             const minutes = Math.floor((duration / 60) % 60)
             const hours = Math.floor((duration / 60 / 60) % 24)
 
-            $('#timeValue').innerText = 'T+' + double(hours) + ':' + double(minutes) + ':' + double(seconds);
+            $('#timeValue').innerText = 'T+00:20:00';
         }
     }
 
@@ -987,11 +988,7 @@
             const now = Math.floor(Date.now() / 1000);
             const secondsFromStart = now - START_SHOW_TIME;
 
-            const response = await fetch('https://tps-api.toncenter.com/tps?to_datetime=2023-10-31%2015%3A20%3A00&limit=256&drop_zeros=false&sort=desc');
-            let json = await response.json();
-            console.log(json);
-            json = json.reverse();
-
+            const json = DATA;
             let txCount = 0;
             let shards = 0;
 
