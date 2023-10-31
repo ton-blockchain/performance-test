@@ -1017,7 +1017,7 @@
                 const item = json[i];
                 const timestamp = item.gen_utime;
                 txCount = item.tx_count;
-                tps = (txCount - prevItem.tx_count) / (timestamp - prevItem.gen_utime);
+                tps = Math.floor((txCount - prevItem.tx_count) / (timestamp - prevItem.gen_utime));
 
                 tpsData.push({time: timestamp * 1000, count: tps})
             }
