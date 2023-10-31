@@ -987,7 +987,7 @@
             const now = Math.floor(Date.now() / 1000);
             const secondsFromStart = now - START_SHOW_TIME;
 
-            const response = await fetch('https://tps-api.toncenter.com/tps?limit=256&sort=desc&t=' + Math.floor(secondsFromStart / 10));
+            const response = await fetch('https://tps-api.toncenter.com/tps?to_datetime=2023-10-31%2015%3A20%3A00&limit=256&drop_zeros=false&sort=desc');
             let json = await response.json();
             console.log(json);
             json = json.reverse();
