@@ -10,6 +10,10 @@
 
 A separate testnet has been launched.
 
+#### Target network configuration
+
+Only one workchain. We aim to split the network into 512 shardchains.
+
 #### Validators software
 
 Validator nodes work on the upcoming version of TON, which after thorough testing will be release on TON mainnet.
@@ -78,7 +82,6 @@ To display metrics of performance test for the user, the following infrastructur
 
 #### Third party auditors
 
-Third party auditors will participate in this performance test. 
+[CertiK](https://www.certik.com/), Web3's leading auditors, will participate in this performance test. 
 
-Third-party auditors have access to all test network nodes as well as lite servers. During the show, third-party auditors take independent measurements.
-
+CertiK auditors have access to all test network nodes as well as lite servers. During the show, third-party auditors take independent measurements.
