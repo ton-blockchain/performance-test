@@ -24,22 +24,22 @@
             sizes="16x16"
             href="./favicon-16x16.png"
     />
-    <link rel="icon" sizes="24x24" href="./favicon-24x24.ico" />
+    <link rel="icon" sizes="24x24" href="./favicon-24x24.ico"/>
     <link
             rel="icon"
             type="image/png"
             sizes="32x32"
             href="./favicon-32x32.png"
     />
-    <link rel="icon" sizes="64x64" href="./favicon-64x64.ico" />
-    <link rel="icon" sizes="96x96" href="./favicon-96x96.ico" />
-    <link rel="icon" sizes="144x144" href="./favicon-144x144.ico" />
-    <link rel="icon" sizes="169x169" href="./favicon-169x169.ico" />
-    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#0098EA" />
+    <link rel="icon" sizes="64x64" href="./favicon-64x64.ico"/>
+    <link rel="icon" sizes="96x96" href="./favicon-96x96.ico"/>
+    <link rel="icon" sizes="144x144" href="./favicon-144x144.ico"/>
+    <link rel="icon" sizes="169x169" href="./favicon-169x169.ico"/>
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#0098EA"/>
 
     <!-- Intro css-->
 
-    <link href="./style.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet"/>
 
     <!-- Stats -->
 
@@ -63,6 +63,7 @@
                             a.push([d].concat(Array.prototype.slice.call(arguments, 0)));
                         };
                     }
+
                     var a = b;
                     "undefined" !== typeof c ? (a = b[c] = []) : (c = "mixpanel");
                     a.people = a.people || [];
@@ -89,6 +90,7 @@
                                 a.push([e, call2]);
                             };
                         }
+
                         for (
                             var d = {},
                                 e = ["get_group"].concat(
@@ -490,14 +492,17 @@
             <div class="logo"></div>
             <div class="title">Performance Test</div>
             <div class="grow"></div>
-            <a id="desktopDetailsLink" href="https://github.com/ton-blockchain/performance-test/blob/main/README.md" target="_blank">Technical Details</a>
-            <a id="desktopJoinButton" class="join-button" href="https://youtube.com/live/jWWl1sLGY7s?feature=share" target="_blank">Join Live
+            <a id="desktopDetailsLink" href="https://github.com/ton-blockchain/performance-test/blob/main/README.md"
+               target="_blank">Technical Details</a>
+            <a id="desktopJoinButton" class="join-button" href="https://youtube.com/live/jWWl1sLGY7s?feature=share"
+               target="_blank">Join Live
                 Stream</a>
         </div>
     </div>
 
     <div class="mobile-links">
-        <a id="mobileJoinButton" class="join-button" href="https://youtube.com/live/jWWl1sLGY7s?feature=share" target="_blank">Join Live Stream</a>
+        <a id="mobileJoinButton" class="join-button" href="https://youtube.com/live/jWWl1sLGY7s?feature=share"
+           target="_blank">Join Live Stream</a>
     </div>
 
     <!-- GAUGES -->
@@ -611,7 +616,8 @@
     <!-- MOBILE FOOTER -->
 
     <div class="footer-mobile">
-        <a href="https://github.com/ton-blockchain/performance-test/blob/main/README.md" target="_blank">Technical Details</a>
+        <a href="https://github.com/ton-blockchain/performance-test/blob/main/README.md" target="_blank">Technical
+            Details</a>
     </div>
 </div>
 
@@ -624,11 +630,13 @@
 
 <div class="intro-container" style="display: none">
     <div class="bg"></div>
-    <header><div class="logo"></div></header>
+    <header>
+        <div class="logo"></div>
+    </header>
     <div class="container">
         <div class="content">
             <h1 class="title">
-                Witness <img src="./assets/icons/telegram.svg" />TON's Historic
+                Witness <img src="./assets/icons/telegram.svg"/>TON's Historic
                 Public Performance Test
             </h1>
             <p class="subtitle">
@@ -976,7 +984,10 @@
             const txData = [];
             const shardsData = [];
 
-            const response = await fetch('https://tps-api.toncenter.com/tps?limit=256&sort=desc');
+            const now = Math.floor(Date.now() / 1000);
+            const secondsFromStart = now - START_SHOW_TIME;
+
+            const response = await fetch('https://tps-api.toncenter.com/tps?limit=256&sort=desc&t=' + Math.floor(secondsFromStart / 10));
             let json = await response.json();
             console.log(json);
             json = json.reverse();
