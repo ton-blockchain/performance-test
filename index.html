@@ -496,14 +496,13 @@
             <a id="desktopDetailsLink" href="https://github.com/ton-blockchain/performance-test/blob/main/README.md"
                target="_blank">Technical Details</a>
             <a id="desktopJoinButton" class="join-button" href="https://youtube.com/live/jWWl1sLGY7s?feature=share"
-               target="_blank">Join Live
-                Stream</a>
+               target="_blank">Live Stream</a>
         </div>
     </div>
 
     <div class="mobile-links">
         <a id="mobileJoinButton" class="join-button" href="https://youtube.com/live/jWWl1sLGY7s?feature=share"
-           target="_blank">Join Live Stream</a>
+           target="_blank">Live Stream</a>
     </div>
 
     <!-- GAUGES -->
@@ -515,7 +514,7 @@
         <div class="col">
             <div class="group group-4">
                 <div class="group-name">
-                    Current TPS
+                     TPS
                 </div>
                 <div class="gauge-container">
                     <div class="gauge-canvas-container">
@@ -912,6 +911,7 @@
     const GAUGE_ANGLE_MAX = 115;
 
     const setTps = (tps) => {
+        tps = 104715;
         $('#tpsGaugeValue').innerText = formatter.format(tps);
 
         const a = 90000;
@@ -967,7 +967,7 @@
             const minutes = Math.floor((duration / 60) % 60)
             const hours = Math.floor((duration / 60 / 60) % 24)
 
-            $('#timeValue').innerText = 'T+00:20:00';
+            $('#timeValue').innerText = 'T+00:25:00';
         }
     }
 
@@ -1027,7 +1027,7 @@
         }
     }
 
-    setInterval(getData, 5 * 1000);
+    // setInterval(getData, 5 * 1000);
     getData();
 
     // STATS
