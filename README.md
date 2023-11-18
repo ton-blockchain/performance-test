@@ -1,20 +1,28 @@
 # TON Performance Test
 
-31 October 2023, 15:00 UTC at https://live.ton.org.
+On 31 October 2023, 15:00 UTC, during the public livestream hosted by the TON Foundation and audited by Certik, the TON Blockchain set a world record by achieving 104,715 transactions per second.
+
+Read the full recap of the event: https://blog.ton.org/100000-transactions-per-second-ton-sets-the-world-record-on-its-first-performance-test
+
+Watch the event: https://www.youtube.com/live/jWWl1sLGY7s?feature=share
+
+Dashboard: https://live.ton.org
+
+CertiK report: https://www.certik.com/resources/blog/7KVtBkHfJkcj0U6u0kKtPe-how-certik-verified-tons-tps-results
 
 ## Tech Details
 
-#### Separate testnet on 256 validator nodes
+### Separate testnet on 256 validator nodes
 
 256 cloud servers (`ecs.c6.6xlarge`, `ubuntu_22_04_x64_20G_alibase_20230613.vhd`) rented in Alibaba Cloud for validator nodes.
 
 A separate testnet has been launched.
 
-#### Target network configuration
+### Target network configuration
 
-Only one workchain. We aim to split the network into 512 shardchains.
+Only one workchain. The network was split into 512 shardchains.
 
-#### Validators software
+### Validators software
 
 Validator nodes work on the upcoming version of TON, which after thorough testing will be release on TON mainnet.
 
@@ -28,9 +36,9 @@ During the test, binaries downloaded from GitHub Autobuild are used - https://gi
 
 Binary checksum obtained by `sha256sum` - `aeddc5c4ea7f09299590351f5575bc423f8a3bab58017b9dfa5e4e2bf4d0b731`
 
-Autobuild builds the source code on GitHub side from the "Accelerator" branch;
+Autobuild builds the source code on GitHub side from the "Accelerator" branch.
 
-#### Smart contract generating load
+### Smart contract generating load
 
 A special smart contract generating transactions has been developed.
 
@@ -44,7 +52,7 @@ The design of a smart contract is a bit like the design of a Jetton contract.
 
 Another feature of the smart contract is that child contracts send to the parent the number of transactions they have made, so transactions are counted on-chain.
 
-#### TPS counter of complex transactions
+### TPS counter of complex transactions
 
 The smart contract has `get_counter` and `get_txs_on_period` get-methods returning the total number of transactions and the number of transactions for a given time period.
 
@@ -69,7 +77,7 @@ export WALLET_MNEMONIC="help"
 yarn start generateStateInit --testnet --mnemonic EQAp1wDaN83cTs1m2Uq5F_NACh8XF6WhGMIysxC5Fx11SuJb efd0d99833118bf09f9874f177bf41f4ab537154b0e04d77a0c7b7a6775a5bd1
 ```
 
-#### Metrics and Dashboard
+### Metrics and Dashboard
 
 To display metrics of performance test for the user, the following infrastructure is deployed:
 
@@ -79,9 +87,22 @@ To display metrics of performance test for the user, the following infrastructur
 
 - Static webpage hosted on GitHub - Dashboard UI https://github.com/ton-blockchain/performance-test/tree/main that requests metrics from the previous service by REST HTTP API and displays it on the page.
 
+### Third party auditors
 
-#### Third party auditors
+[CertiK](https://www.certik.com/), Web3's leading auditors, participated in test and verified the results.
 
-[CertiK](https://www.certik.com/), Web3's leading auditors, will participate in this performance test. 
+CertiK auditors had access to all test network nodes as well as lite servers. During the show, third-party auditors took independent measurements.
 
-CertiK auditors have access to all test network nodes as well as lite servers. During the show, third-party auditors take independent measurements.
+CertiK report: https://www.certik.com/resources/blog/7KVtBkHfJkcj0U6u0kKtPe-how-certik-verified-tons-tps-results
+
+### Public dump of test network
+
+Public dump of the entire test network on which the performance test was conducted:
+
+HTTP API: https://record.toncenter.com/
+
+Dump: https://dump.ton.org/dumps/record_dump.tar.lz
+
+Blockchain explorer: http://record-explorer.toncenter.com/
+
+Global Config: https://ton-blockchain.github.io/performance-test/record.global.config.archive-proxy.json
