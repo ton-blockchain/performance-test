@@ -2,7 +2,7 @@
 
 On October 31, we proved that TON is the fastest and most scalable blockchain in the world.
 
-During public performance testing on *256* validator nodes, a speed of *104 715* transactions of smart contract execution per second was set. CertiK, the Web3's leading auditor, participated in the event as an independent party and confirmed the results.
+During public performance testing on **256** validator nodes, a speed of **104 715** transactions of smart contract execution per second was set. CertiK, the Web3's leading auditor, participated in the event as an independent party and confirmed the results.
 
 The most impressive thing is that the result is far from the limit. TON can handle millions of transactions per second if there are enough validator nodes in the network.
 
@@ -113,6 +113,10 @@ Global config: https://ton-blockchain.github.io/performance-test/record.global.c
 
 # FAQ
 
+### Why wasn't the test conducted on the mainnet?
+
+Generating that load on the main network would require a lot of money to pay network fees.
+
 ### About Layer2/Layer3/Rollups/etc.
 
 We believe that Layer 2 solutions as well as ZK solutions can be useful for solving some specific problems.
@@ -133,8 +137,8 @@ Since Radix doesn't have blocks, it is more logical to compare it with other dis
 
 ### SUI is faster!
 
-We use the common meaning of "transaction" - some atomic action, such as a balance change
-or the execution of a smart contract, the result of which is recorded to the block.
+We use the common meaning of "transaction" - some atomic action, such as account(s) state change
+or the execution of a smart contract(s), the result of which is recorded to the block.
 
 When SUI blockchain shows hundreds of thousands of transactions, it refers to transactions as operations, and a single atomic write to a block can contain dozens of such operations. At one operation per write, the speed in SUI drops to 10K TPS.
 
